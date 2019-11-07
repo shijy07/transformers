@@ -298,7 +298,7 @@ def load_and_cache_examples(args, tokenizer, evaluate=False, output_examples=Fal
 
     # Load data features from cache or dataset file
     input_file = args.predict_file if evaluate else args.train_file
-    cached_features_file = os.path.join(args.output_dir, 'cached_{}_{}_{}'.format(
+    cached_features_file = os.path.join(args.input_dir, 'cached_{}_{}_{}'.format(
         'dev' if evaluate else 'train',
         list(filter(None, args.model_name_or_path.split('/'))).pop(),
         str(args.max_seq_length)))
